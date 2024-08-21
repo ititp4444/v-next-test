@@ -4,20 +4,23 @@ import RegisterForm from '../components/RegisterFrom'
 import Login2 from '../components/Login2'
 const fetchData = async () => {
     try {
-        const header = {
-            'X-Requested-With': 'XMLHttpRequest',
-            referrer: 'https://fe-next-hono.pages.dev'
-        }
-        const res = await fetch(`${process.env.API_BASE}/admin/users`, { headers: header, cache: 'no-store' })
+        const res = await fetch(`${process.env.API_BASE}/admin/users`, { cache: 'no-store' })
+        console.log(res)
         const result = await res.json()
         return result
     } catch (error) {
-        console.log(error)
+        console.error(error)
         return []
     }
 }
 
 export default async function Users() {
+    try {
+        const res = await fetch(`https://hono-be.supsup-h3a4.workers.dev`, { cache: 'no-store' })
+        // console.log(res)
+    } catch (error) {
+        console.error(error)
+    }
     const list = await fetchData()
     return (
         <>
