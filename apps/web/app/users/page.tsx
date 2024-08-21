@@ -12,7 +12,8 @@ const fetchData = async () => {
         const result = await res.json()
         return result
     } catch (error) {
-        return error
+        console.log(error)
+        return []
     }
 }
 
