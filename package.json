@@ -9,13 +9,15 @@
         "packages/*"
     ],
     "scripts": {
-        "build": "turbo run build",
-        "dev": "turbo run dev",
+        "build": "pnpm with-env turbo run build",
+        "dev": "pnpm with-env turbo run dev",
         "start": "turbo run start",
         "lint": "turbo run lint",
-        "dev:web": "turbo run dev --filter=web"
+        "dev:web": "pnpm with-env turbo run dev --filter=web",
+        "with-env": "dotenv -e .env.local --"
     },
     "devDependencies": {
+        "dotenv-cli": "^7.4.2",
         "eslint": "^8.28.0",
         "eslint-config-turbo": "latest",
         "turbo": "^2.0.6"
