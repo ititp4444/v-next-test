@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import type { Metadata } from 'next'
 import Header from '@pcm/ui/layout'
-import Name from '../../../features/name/components/Name'
+import Name from '@/features/name/components/Name'
 
 async function getPageData(id?: string) {
     try {
@@ -28,12 +28,14 @@ export default async function Page({ params }: { params: { id: string } }) {
         <>
             <Header />
             <div>
-                <h1>web SSR page</h1>
-                <p>{poke?.name}</p>
+                <h1>{poke?.name}</h1>
                 <img src={poke?.sprites?.front_default} alt='' />
-                {poke.types.map((v: any, i: number) => {
-                    return <Name key={`types_${i}`} ttt={v.type} />
-                })}
+                <h2>タイプ</h2>
+                <div>
+                    {poke.types.map((v: any, i: number) => {
+                        return <Name key={`types_${i}`} ttt={v.type} />
+                    })}
+                </div>
             </div>
         </>
     )

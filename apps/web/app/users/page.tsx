@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Header from '@pcm/ui/layout'
-import RegisterForm from '../components/RegisterFrom'
-import Login2 from '../components/Login2'
+import RegisterForm from '@/components/RegisterFrom'
+import Login2 from '@/components/Login2'
 const fetchData = async () => {
     try {
         const res = await fetch(`${process.env.API_BASE}/admin/users`, { cache: 'no-store' })

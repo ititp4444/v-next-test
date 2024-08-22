@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import submitAction from '../lib/action'
+import submitAction from '@/lib/action'
 const RegisterForm = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

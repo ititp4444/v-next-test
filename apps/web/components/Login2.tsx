@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 // import { revalidatePath } from 'next/cache'
-import { serverRevalidatePath } from '../lib/serverRevalidatePath'
+import { serverRevalidatePath } from '@/lib/serverRevalidatePath'
 import { useRouter } from 'next/navigation'
 const Login2 = () => {
     const router = useRouter()
