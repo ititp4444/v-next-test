@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '@pcm/ui/layout'
 import { cookies } from 'next/headers'
-export const runtime = 'edge'
 const fetchData = async () => {
     try {
         const cookieStore = cookies()
@@ -16,7 +15,6 @@ const fetchData = async () => {
             credentials: 'include'
         })
         const result = await res.json()
-        console.log(result)
         if (result.status === 401) {
             return []
         }

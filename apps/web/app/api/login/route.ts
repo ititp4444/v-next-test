@@ -15,8 +15,6 @@ export async function POST(req: NextRequest) {
         credentials: 'include'
     })
     const result = await res.json()
-    revalidatePath('/admin')
-    console.log(result)
     if (result?.token) {
         cookies().set({
             name: 'token',
@@ -26,6 +24,8 @@ export async function POST(req: NextRequest) {
             sameSite: 'lax',
             maxAge: 1 * 60
         })
+        //
     }
+    // return NextResponse.redirect(new URL('/admin', req.url))
     return Response.json(result)
 }

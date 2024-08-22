@@ -12,7 +12,6 @@ async function getIndex() {
     }
 }
 export default async function Home() {
-    console.log(process.env.API_BASE)
     const list = await getIndex()
     return (
         <>
